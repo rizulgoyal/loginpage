@@ -1,15 +1,20 @@
 package com.example.loginpage;
 
+import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class FirstActivity extends AppCompatActivity {
 
@@ -18,6 +23,11 @@ public class FirstActivity extends AppCompatActivity {
     private EditText password;
     private Button login;
     private String usernamestore;
+    private String passwordstore;
+    private ToggleButton newtoggle;
+    private TextView colortext;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +37,25 @@ public class FirstActivity extends AppCompatActivity {
         username = findViewById(R.id.editUserName);
         password = findViewById(R.id.editPassword);
         login = findViewById(R.id.buttonlogin);
+        newtoggle = findViewById(R.id.toggleButton);
+        colortext =  findViewById(R.id.txtColor);
+
+        newtoggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if(newtoggle.isChecked())
+                {
+                    colortext.setTextColor(Color.BLUE);
+                }
+                else
+                {
+                    colortext.setTextColor(Color.RED);
+                }
+
+            }
+        });
+
 
 
 
@@ -39,8 +68,11 @@ public class FirstActivity extends AppCompatActivity {
                 if(username.getText().toString().equals("Rizul") && password.getText().toString().equals("8029"))
                 {
                     usernamestore = username.getText().toString();
+                    passwordstore = password.getText().toString();
                     Intent intent = new Intent(FirstActivity.this, HomeActivity.class);
                     intent.putExtra("username",usernamestore);
+                    intent.putExtra("password",passwordstore);
+
                     if (usernamestore.isEmpty())
                     {
                      Toast.makeText(FirstActivity.this,"jhcbydfhvhi",Toast.LENGTH_SHORT).show();

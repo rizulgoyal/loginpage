@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -59,7 +60,30 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-        
+        Bundle extras = getIntent().getExtras();
+        String value = extras.getString("username");
+
+
+
+        if (view.getId() == R.id.lowercase) {
+
+            display.setText(value.toLowerCase());
+            //Intent intent = new Intent(FirstActivity.this, HomeActivity.class);
+
+            //Toast.makeText(FirstActivity.this,"jhcbydfhvhi",Toast.LENGTH_SHORT).show();
+
+            //startActivity(intent);
+        }
+        else if (view.getId() == R.id.uppercase) {
+
+            display.setText(value.toUpperCase());
+            //Intent intent = new Intent(FirstActivity.this, HomeActivity.class);
+
+            //Toast.makeText(FirstActivity.this,"jhcbydfhvhi",Toast.LENGTH_SHORT).show();
+
+            //startActivity(intent);
+        }
+
 
     }
 }

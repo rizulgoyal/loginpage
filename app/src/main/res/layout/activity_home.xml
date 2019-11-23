@@ -7,7 +7,7 @@
     tools:context=".HomeActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewdisplay"
         android:layout_width="305dp"
         android:layout_height="47dp"
         android:text="Welcome to Homepage"
@@ -15,6 +15,30 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <Button
+        android:id="@+id/uppercase"
+        android:layout_width="174dp"
+        android:layout_height="51dp"
+        android:text="Uppercase"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404" />
+
+    <Button
+        android:id="@+id/lowercase"
+        android:layout_width="174dp"
+        android:layout_height="58dp"
+        android:text="Lowercase"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -17,6 +17,7 @@ public class FirstActivity extends AppCompatActivity {
 
     private EditText password;
     private Button login;
+    private String usernamestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class FirstActivity extends AppCompatActivity {
         password = findViewById(R.id.editPassword);
         login = findViewById(R.id.buttonlogin);
 
+
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,7 +38,13 @@ public class FirstActivity extends AppCompatActivity {
 
                 if(username.getText().toString().equals("Rizul") && password.getText().toString().equals("8029"))
                 {
+                    usernamestore = username.getText().toString();
                     Intent intent = new Intent(FirstActivity.this, HomeActivity.class);
+                    intent.putExtra("username",usernamestore);
+                    if (usernamestore.isEmpty())
+                    {
+                     Toast.makeText(FirstActivity.this,"jhcbydfhvhi",Toast.LENGTH_SHORT).show();
+                    }
                     startActivity(intent);
                 }
                 else
@@ -72,7 +81,7 @@ public class FirstActivity extends AppCompatActivity {
                 "Yes",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
+                        dialog.dismiss();
                     }
                 });
 
@@ -82,7 +91,7 @@ public class FirstActivity extends AppCompatActivity {
                 "No",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
+                        dialog.dismiss();
                     }
                 });
 

@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -26,6 +27,7 @@ public class FirstActivity extends AppCompatActivity {
     private String passwordstore;
     private ToggleButton newtoggle;
     private TextView colortext;
+    private Switch rememberme;
 
 
 
@@ -39,6 +41,29 @@ public class FirstActivity extends AppCompatActivity {
         login = findViewById(R.id.buttonlogin);
         newtoggle = findViewById(R.id.toggleButton);
         colortext =  findViewById(R.id.txtColor);
+        rememberme = findViewById(R.id.switch1);
+
+        rememberme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                if(rememberme.isChecked())
+                {
+                    colortext.setText("I am Female");
+                    colortext.setBackgroundColor(Color.YELLOW);
+                    colortext.setTextColor(Color.BLUE);
+                }
+                else
+                {
+                    colortext.setText("I am Male");
+
+                    colortext.setBackgroundColor(Color.LTGRAY);
+
+                    colortext.setTextColor(Color.RED);
+                }
+
+            }
+        });
 
         newtoggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -46,10 +71,16 @@ public class FirstActivity extends AppCompatActivity {
 
                 if(newtoggle.isChecked())
                 {
+                    colortext.setText("I am Female");
+                    colortext.setBackgroundColor(Color.YELLOW);
                     colortext.setTextColor(Color.BLUE);
                 }
                 else
                 {
+                    colortext.setText("I am Male");
+
+                    colortext.setBackgroundColor(Color.LTGRAY);
+
                     colortext.setTextColor(Color.RED);
                 }
 

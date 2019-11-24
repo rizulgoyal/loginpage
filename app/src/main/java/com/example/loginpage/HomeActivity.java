@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         uppercase.setOnClickListener(this);
         lowercase.setOnClickListener(this);
-
+// please add one commnt
 
 
 

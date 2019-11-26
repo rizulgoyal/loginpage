@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -16,6 +17,8 @@ public class PickerExampleActivity extends AppCompatActivity implements AdapterV
 
     private Spinner spcountries;
     ArrayList<String>countryList;
+
+    Integer[] imageArray = {R.drawable.canada,R.drawable.china,R.drawable.india,R.drawable.usa};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class PickerExampleActivity extends AppCompatActivity implements AdapterV
 
         ArrayAdapter<CharSequence> maarayadapter = ArrayAdapter.createFromResource(this,R.array.array_country, android.R.layout.simple_spinner_item);
         maarayadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
 
         spcountries.setAdapter(maarayadapter);
         spcountries.setOnItemSelectedListener(this);

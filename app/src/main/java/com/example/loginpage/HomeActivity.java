@@ -82,6 +82,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         switch (item.getItemId())
         {
             case R.id.action_add:
+                Intent myintent = new Intent(this,PickerExampleActivity.class);
+                startActivity(myintent);
                 Toast.makeText(HomeActivity.this,"Added",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_delete:

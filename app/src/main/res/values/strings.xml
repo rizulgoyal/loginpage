@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">loginpage</string>
+    <array name="array_country">
+        <item>India</item>
+        <item>Canada</item>
+        <item>Newzealand</item>
+        <item>Taiwan</item>
+        <item>USA</item>
+        <item>Pakistan</item>
+        <item>Bangladesh</item>
+        <item>China</item>
+        <item>JapaN</item>
+        <item>Nepal</item>
+
+
+
+    </array>
 </resources>

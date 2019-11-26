@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@drawable/ic_action_delete"
+        android:title="Delete Item" />
+    <item
+        android:id="@+id/action_add"
+        android:icon="@drawable/ic_action_add"
+        android:title="Add new" />
+    <item android:id="@+id/action_submenu"
+        android:title="Submenu">
+        <menu>
+            <item android:id="@+id/s1"
+                android:title="Submenu 1"/>
+            <item android:id="@+id/s2"
+                android:title="Submenu 2"/>
+            <item android:id="@+id/s3"
+                android:title="Submenu 3"/>
+
+
+        </menu>
+    </item>
+
+</menu>
